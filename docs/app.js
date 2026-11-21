@@ -48,9 +48,10 @@
     }
     show(
       el("h1", {}, "Question Answering Study"),
-      el("p", {}, "Thank you for your interest in this study. This questionnaire is part of a class research project (COS 597B) that examines how people use background information when answering questions."),
+      el("h2", {}, "Welcome!"),
+      el("p", {}, "Thank you for your interest in this study. This questionnaire is part of a class project (COS 597B) that examines how people use background information when answering questions."),
       el("p", {}, "You will be shown a series of short questions. Some questions include a context passage and others do not. Please answer each question based on your own knowledge and judgment, and do not search online. The main set takes approximately 20\u201330 minutes."),
-      el("p", {}, el("strong", {}, "Please do not use AI tools (such as ChatGPT, Gemini, or Copilot)."), " The purpose of this experiment is to compare how people and language models use context, so your answers must reflect human judgment only."),
+      el("p", {}, el("strong", {}, "Please do not use AI tools (such as ChatGPT, Gemini, or Claude)."), " The purpose of this experiment is to compare how people and language models use context, so your answers must reflect human judgment only."),
       el("p", {}, "Participation is voluntary, and you may stop at any time. Your responses will be used solely for this class project and will not be shared or used for any other purpose."),
       el("h2", {}, "Your name"),
       el("p", { class: "muted" }, "Please enter your first name, or a pseudonym such as \u201cJohn Doe\u201d if you prefer to remain anonymous."),
