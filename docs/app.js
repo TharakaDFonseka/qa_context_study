@@ -145,8 +145,8 @@
     const pct = Math.round((state.index / list.length) * 100);
     show(
       el("div", { class: "topline" },
-        el("span", {}, (state.phase === "extra" ? "Additional questions \u2014 " : "") + `Question ${state.index + 1} of ${list.length}`),
-        el("span", {}, `${pct}%`)),
+        el("span", {}, state.phase === "extra" ? "Additional questions" : ""),
+        el("span", {}, `${pct}% complete`)),
       el("div", { class: "progress" }, el("div", { style: `width:${pct}%` })),
       el("p", { class: "instruction" }, instruction),
       el("p", { class: "question" }, q.question),
@@ -175,7 +175,7 @@
     });
     show(
       el("h1", {}, "All questions answered"),
-      el("p", {}, `You have answered all ${items().length} questions${phase === "extra" ? " in the additional set" : ""}. You can review your answers or submit them now.`),
+      el("p", {}, `You have answered all the questions${phase === "extra" ? " in the additional set" : ""}. You can review your answers or submit them now.`),
       el("div", { class: "btnrow" }, review, submit),
       error ? el("p", { class: "error center" }, error) : "",
     );
@@ -264,9 +264,13 @@
       const flip = x => ({ qid: x.qid, condition: x.condition === "with_context" ? "without_context" : "with_context" });
       localStorage.setItem("cogqa_local_pending", JSON.stringify({ main: main.map(flip), extra: extra.map(flip) }));
     }
+    const groupRank = { S: 0, M: 1, R: 2 };
+    const condRank = { without_context: 0, with_context: 1 };
+    const order = items => shuffle(items.slice()).sort((a, b) =>
+      (groupRank[a.qid[0]] - groupRank[b.qid[0]]) || (condRank[a.condition] - condRank[b.condition]));
     return {
       ok: true, participant_id: "local-" + Date.now(), pair_id: 0, pair_role: role,
-      assignment: { main: shuffle(assignment.main.slice()), extra: shuffle(assignment.extra.slice()) },
+      assignment: { main: order(assignment.main), extra: order(assignment.extra) },
     };
   }
 
