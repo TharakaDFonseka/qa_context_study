@@ -50,7 +50,7 @@
       el("h1", {}, "Question Answering Study"),
       el("h2", {}, "Welcome!"),
       el("p", {}, "Thank you for your interest in this study. This questionnaire is part of a class project (COS 597B) that examines how people use background information when answering questions."),
-      el("p", {}, "You will be shown a series of short questions. Some questions include a context passage and others do not. Please answer each question based on your own knowledge and judgment, and do not search online. The main set takes approximately 40\u201350 minutes."),
+      el("p", {}, "You will be shown a series of short questions. Some questions include a context passage and others do not. Please answer each question based on your own knowledge and judgment, and do not search online. The main set takes approximately 15\u201320 minutes."),
       el("p", {}, el("strong", {}, "Please do not use AI tools (such as ChatGPT, Gemini, or Claude)."), " The purpose of this experiment is to compare how people and language models use context, so your answers must reflect human judgment only."),
       el("p", {}, "Participation is voluntary, and you may stop at any time. Your responses will be used solely for this class project and will not be shared or used for any other purpose."),
       el("h2", {}, "Your name"),
