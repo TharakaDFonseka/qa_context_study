@@ -50,7 +50,7 @@
       el("h1", {}, "Question Answering Study"),
       el("h2", {}, "Welcome!"),
       el("p", {}, "Thank you for your interest in this study. This questionnaire is part of a class project (COS 597B) that examines how people use background information when answering questions."),
-      el("p", {}, "You will be shown a series of short questions. Some questions include a context passage and others do not. Please answer each question based on your own knowledge and judgment, and do not search online. The main set takes approximately 20\u201330 minutes."),
+      el("p", {}, "You will be shown a series of short questions. Some questions include a context passage and others do not. Please answer each question based on your own knowledge and judgment, and do not search online. The main set takes approximately 40\u201350 minutes."),
       el("p", {}, el("strong", {}, "Please do not use AI tools (such as ChatGPT, Gemini, or Claude)."), " The purpose of this experiment is to compare how people and language models use context, so your answers must reflect human judgment only."),
       el("p", {}, "Participation is voluntary, and you may stop at any time. Your responses will be used solely for this class project and will not be shared or used for any other purpose."),
       el("h2", {}, "Your name"),
@@ -241,7 +241,7 @@
   // Mirrors randomAssignment_/complement_ in Code.gs, for local testing only.
   function localAssign() {
     const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-    const counts = { strategyqa: 16, mc: 20, repliqa: 5 };
+    const counts = { strategyqa: 30, mc: 30, repliqa: 5 };
     const split = ids => {
       const s = shuffle(ids.slice());
       let nWith = Math.floor(s.length / 2);
